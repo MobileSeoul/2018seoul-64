@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:fitsSystemWindows="true"
+    tools:context=".main.DetailArtItemActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/detail_art_item_image_height"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/artItemImg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:scaleType="centerCrop"
+                android:transitionName="sharedTransition"
+                app:layout_collapseMode="parallax" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#66000000"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:gravity="top"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/namsan_medium"
+                    android:maxLines="1"
+                    android:text="@string/detail_art_item_title"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/form_section_title_textsize" />
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/write_review_section_min_height"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants">
+
+            <android.support.constraint.Guideline
+                android:id="@+id/itemLeftGl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".03" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/itemRightGl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".97" />
+
+            <TextView
+                android:id="@+id/artItemCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/art_item_name_top_margin"
+                android:background="@drawable/category_round_bg"
+                android:fontFamily="@font/namsan_medium"
+                android:paddingBottom="@dimen/dashboard_category_info_top_bottom_padding"
+                android:paddingLeft="@dimen/dashboard_category_info_left_right_padding"
+                android:paddingRight="@dimen/dashboard_category_info_left_right_padding"
+                android:paddingTop="@dimen/dashboard_category_info_top_bottom_padding"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/detail_art_item_category_size"
+                app:layout_constraintLeft_toLeftOf="@id/itemLeftGl"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/artItemName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/detail_art_item_top_margin"
+                android:ellipsize="end"
+                android:fontFamily="@font/namsan_bold"
+                android:maxLines="3"
+                android:textColor="#424242"
+                android:textSize="@dimen/detail_art_item_name_textsize"
+                app:layout_constraintLeft_toLeftOf="@id/itemLeftGl"
+                app:layout_constraintRight_toRightOf="@id/itemRightGl"
+                app:layout_constraintTop_toBottomOf="@id/artItemCategory" />
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/normal_line_size"
+                android:layout_marginTop="@dimen/detail_art_item_top_margin"
+                android:background="#e0e0e0"
+                app:layout_constraintLeft_toLeftOf="@id/itemLeftGl"
+                app:layout_constraintRight_toRightOf="@id/itemRightGl"
+                app:layout_constraintTop_toBottomOf="@id/artItemName" />
+
+            <android.support.constraint.Barrier
+                android:id="@+id/titleBarrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="end"
+                app:constraint_referenced_ids="artItemDateTitle, artItemTimeTitle, artItemLocationTitle, artItemFeeTitle, artItemWebPageTitle, artItemContactTitle" />
+
+            <TextView
+                android:id="@+id/artItemDateTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/detail_art_item_top_margin"
+                android:fontFamily="@font/namsan_medium"
+                android:text="@string/date"
+                android:textColor="#424242"
+                android:textSize="@dimen/detail_art_item_info_textsize"
+                app:layout_constraintLeft_toLeftOf="@id/itemLeftGl"
+                app:layout_constraintTop_toBottomOf="@id/line1" />
+
+            <TextView
+                android:id="@+id/artItemDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/detail_art_item_info_left_margin"
+                android:fontFamily="@font/namsan_light"
+                android:textColor="#616161"
+                android:textSize="@dimen/detail_art_item_info_textsize"
+                app:layout_constraintLeft_toRightOf="@id/titleBarrier"
+                app:layout_constraintRight_toRightOf="@id/itemRightGl"
+                app:layout_constraintTop_toTopOf="@id/artItemDateTitle" />
+
+            <TextView
+                android:id="@+id/artItemTimeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/detail_art_item_top_margin"
+                android:fontFamily="@font/namsan_medium"
+                android:text="@string/time"
+                android:textColor="#424242"
+                android:textSize="@dimen/detail_art_item_info_textsize"
+                app:layout_constraintLeft_toLeftOf="@id/itemLeftGl"
+                app:layout_constraintTop_toBottomOf="@id/artItemDateTitle" />
+
+            <TextView
+                android:id="@+id/artItemTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/detail_art_item_info_left_margin"
+                android:fontFamily="@font/namsan_light"
+                android:textColor="#616161"
+                android:textSize="@dimen/detail_art_item_info_textsize"
+                app:layout_constraintLeft_toRightOf="@id/titleBarrier"
+                app:layout_constraintRight_toRightOf="@id/itemRightGl"
+                app:layout_constraintTop_toTopOf="@id/artItemTimeTitle" />
+
+            <TextView
+                android:id="@+id/artItemLocationTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/detail_art_item_top_margin"
+                android:fontFamily="@font/namsan_medium"
+                android:text="@string/location"
+                android:textColor="#424242"
+                android:textSize="@dimen/detail_art_item_info_textsize"
+                app:layout_constraintLeft_toLeftOf="@id/itemLeftGl"
+                app:layout_constraintTop_toBottomOf="@id/artItemTime" />
+
+            <TextView
+                android:id="@+id/artItemLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/detail_art_item_info_left_margin"
+                android:fontFamily="@font/namsan_light"
+                android:textColor="#616161"
+                android:textSize="@dimen/detail_art_item_info_textsize"
+                app:layout_constraintLeft_toRightOf="@id/titleBarrier"
+                app:layout_constraintRight_toRightOf="@id/itemRightGl"
+                app:layout_constraintTop_toTopOf="@id/artItemLocationTitle" />
+
+            <TextView
+                android:id="@+id/artItemFeeTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/detail_art_item_top_margin"
+                android:fontFamily="@font/namsan_medium"
+                android:text="@string/use_fee_title"
+                android:textColor="#424242"
+                android:textSize="@dimen/detail_art_item_info_textsize"
+                app:layout_constraintLeft_toLeftOf="@id/itemLeftGl"
+                app:layout_constraintTop_toBottomOf="@id/artItemLocation" />
+
+            <TextView
+                android:id="@+id/artItemFee"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/detail_art_item_info_left_margin"
+                android:autoLink="web"
+                android:fontFamily="@font/namsan_light"
+                android:textColor="#616161"
+                android:textSize="@dimen/detail_art_item_info_textsize"
+                app:layout_constraintLeft_toRightOf="@id/titleBarrier"
+                app:layout_constraintRight_toRightOf="@id/itemRightGl"
+                app:layout_constraintTop_toTopOf="@id/artItemFeeTitle" />
+
+            <TextView
+                android:id="@+id/artItemWebPageTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/detail_art_item_top_margin"
+                android:fontFamily="@font/namsan_medium"
+                android:text="@string/webpage_title"
+                android:textColor="#424242"
+                android:textSize="@dimen/detail_art_item_info_textsize"
+                app:layout_constraintLeft_toLeftOf="@id/itemLeftGl"
+                app:layout_constraintTop_toBottomOf="@id/artItemFee" />
+
+            <TextView
+                android:id="@+id/artItemWebPage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/detail_art_item_info_left_margin"
+                android:autoLink="web"
+                android:fontFamily="@font/namsan_light"
+                android:textColor="#616161"
+                android:textSize="@dimen/detail_art_item_info_textsize"
+                app:layout_constraintLeft_toRightOf="@id/titleBarrier"
+                app:layout_constraintRight_toRightOf="@id/itemRightGl"
+                app:layout_constraintTop_toTopOf="@id/artItemWebPageTitle" />
+
+            <TextView
+                android:id="@+id/artItemContactTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/detail_art_item_top_margin"
+                android:fontFamily="@font/namsan_medium"
+                android:text="@string/contact_title"
+                android:textColor="#424242"
+                android:textSize="@dimen/detail_art_item_info_textsize"
+                app:layout_constraintLeft_toLeftOf="@id/itemLeftGl"
+                app:layout_constraintTop_toBottomOf="@id/artItemWebPage" />
+
+            <TextView
+                android:id="@+id/artItemContact"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/detail_art_item_info_left_margin"
+                android:autoLink="phone"
+                android:fontFamily="@font/namsan_light"
+                android:textColor="#616161"
+                android:textSize="@dimen/detail_art_item_info_textsize"
+                app:layout_constraintLeft_toRightOf="@id/titleBarrier"
+                app:layout_constraintRight_toRightOf="@id/itemRightGl"
+                app:layout_constraintTop_toTopOf="@id/artItemContactTitle" />
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/normal_line_size"
+                android:layout_marginTop="@dimen/detail_art_item_top_margin"
+                android:background="#e0e0e0"
+                app:layout_constraintLeft_toLeftOf="@id/itemLeftGl"
+                app:layout_constraintRight_toRightOf="@id/itemRightGl"
+                app:layout_constraintTop_toBottomOf="@id/artItemContact"
+                app:layout_goneMarginTop="0dp" />
+
+            <TextView
+                android:id="@+id/artItemDesc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/detail_art_item_top_margin"
+                android:fontFamily="@font/namsan_medium"
+                android:textColor="#616161"
+                android:textSize="@dimen/detail_art_item_info_textsize"
+                app:layout_constraintLeft_toLeftOf="@id/itemLeftGl"
+                app:layout_constraintRight_toRightOf="@id/itemRightGl"
+                app:layout_constraintTop_toBottomOf="@id/line2" />
+
+            <android.support.constraint.Group
+                android:id="@+id/descGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="line2, artItemDesc" />
+
+            <View
+                android:id="@+id/line3"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/normal_line_size"
+                android:layout_marginTop="@dimen/detail_art_item_top_margin"
+                android:background="#e0e0e0"
+                app:layout_constraintLeft_toLeftOf="@id/itemLeftGl"
+                app:layout_constraintRight_toRightOf="@id/itemRightGl"
+                app:layout_constraintTop_toBottomOf="@id/artItemDesc" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/reviewList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line3" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@android:color/white">
+
+        <View
+            android:id="@+id/topLine"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/write_review_section_top_line_height"
+            android:background="#e0e0e0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/inputReview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:fontFamily="@font/namsan_medium"
+            android:hint="@string/input_review_hint"
+            android:maxLines="5"
+            android:minHeight="@dimen/write_review_section_min_height"
+            android:padding="@dimen/form_section_gap"
+            android:textColor="#616161"
+            android:textSize="@dimen/form_section_title_textsize"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintWidth_percent=".85" />
+
+        <FrameLayout
+            android:id="@+id/writeBtn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="?attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/inputReview"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/topLine">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/write_review_section_min_height"
+                android:layout_gravity="bottom"
+                android:fontFamily="@font/namsan_medium"
+                android:gravity="center"
+                android:text="@string/publish"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/form_section_title_textsize" />
+
+        </FrameLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.design.widget.CoordinatorLayout>

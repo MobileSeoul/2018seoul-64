@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/lGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".03" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/rGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".97" />
+
+    <TextView
+        android:id="@+id/searchTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dashboard_title_top_margin"
+        android:fontFamily="@font/namsan_medium"
+        android:text="@string/search_title"
+        android:textColor="#616161"
+        android:textSize="@dimen/dashboard_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/searchSubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dashboard_subtitle_top_margin"
+        android:fontFamily="@font/namsan_light"
+        android:text="@string/search_sub_title"
+        android:textColor="#616161"
+        android:textSize="@dimen/dashboard_subtitle_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintTop_toBottomOf="@id/searchTitle" />
+
+    <View
+        android:id="@+id/titleLine"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/normal_line_size"
+        android:layout_marginTop="@dimen/dashboard_title_section_line_top_margin"
+        android:background="#e0e0e0"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintRight_toRightOf="@id/rGl"
+        app:layout_constraintTop_toBottomOf="@id/searchSubTitle" />
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleLine">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/searchFormSection"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:cardCornerRadius="@dimen/dashboard_item_card_corner_radius"
+            app:cardElevation="@dimen/dashboard_item_card_elevation"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintHeight_percent=".40"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/searchFormLeftGl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".02" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/searchFormRightGl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".98" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/dateLeftGl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".46" />
+
+                <android.support.constraint.Guideline
+                    android:id="@+id/dateRightGl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent=".54" />
+
+                <ImageView
+                    android:id="@+id/categorySpinnerIcon"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_format_list_bulleted_18dp"
+                    app:layout_constraintDimensionRatio="0.8:1"
+                    app:layout_constraintHeight_percent=".30"
+                    app:layout_constraintLeft_toLeftOf="@id/searchFormLeftGl"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <android.support.v7.widget.AppCompatSpinner
+                    android:id="@+id/categorySpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@null"
+                    app:layout_constraintBottom_toBottomOf="@id/categorySpinnerIcon"
+                    app:layout_constraintLeft_toLeftOf="@id/searchFormLeftGl"
+                    app:layout_constraintRight_toRightOf="@id/searchFormRightGl"
+                    app:layout_constraintTop_toTopOf="@id/categorySpinnerIcon" />
+
+                <ImageView
+                    android:id="@+id/categorySpinnerArrowIcon"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_keyboard_arrow_down_18dp"
+                    app:layout_constraintDimensionRatio="0.8:1"
+                    app:layout_constraintHeight_percent=".30"
+                    app:layout_constraintRight_toRightOf="@id/searchFormRightGl"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/categorySpinnerUnderline"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/spinner_underline_height"
+                    android:background="#e0e0e0"
+                    app:layout_constraintBottom_toBottomOf="@id/categorySpinnerIcon"
+                    app:layout_constraintLeft_toLeftOf="@id/categorySpinnerIcon"
+                    app:layout_constraintRight_toRightOf="@id/categorySpinner" />
+
+                <ImageView
+                    android:id="@+id/startDateIcon"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_event_18dp"
+                    app:layout_constraintDimensionRatio="0.8:1"
+                    app:layout_constraintHeight_percent=".30"
+                    app:layout_constraintLeft_toLeftOf="@id/searchFormLeftGl"
+                    app:layout_constraintTop_toBottomOf="@id/categorySpinnerUnderline" />
+
+                <artground.otterbear.com.artground.widget.DatePickerTextView
+                    android:id="@+id/startDateBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/namsan_medium"
+                    android:gravity="center_vertical"
+                    android:text="@string/start_date_title"
+                    android:textColor="#616161"
+                    android:textSize="@dimen/search_form_textsize"
+                    app:layout_constraintBottom_toBottomOf="@id/startDateIcon"
+                    app:layout_constraintLeft_toRightOf="@id/startDateIcon"
+                    app:layout_constraintRight_toRightOf="@id/dateLeftGl"
+                    app:layout_constraintTop_toTopOf="@id/startDateIcon" />
+
+                <View
+                    android:id="@+id/startDateUnderLine"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/spinner_underline_height"
+                    android:background="#e0e0e0"
+                    app:layout_constraintBottom_toBottomOf="@id/startDateIcon"
+                    app:layout_constraintLeft_toLeftOf="@id/startDateIcon"
+                    app:layout_constraintRight_toRightOf="@id/startDateBtn" />
+
+                <TextView
+                    android:id="@+id/dateLine"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/namsan_medium"
+                    android:gravity="center"
+                    android:text="~"
+                    android:textColor="#616161"
+                    android:textSize="@dimen/dashboard_review_info_title_textsize"
+                    app:layout_constraintBottom_toBottomOf="@id/startDateIcon"
+                    app:layout_constraintLeft_toRightOf="@id/dateLeftGl"
+                    app:layout_constraintRight_toRightOf="@id/dateRightGl"
+                    app:layout_constraintTop_toTopOf="@id/startDateIcon" />
+
+                <ImageView
+                    android:id="@+id/endDateIcon"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_event_18dp"
+                    app:layout_constraintBottom_toBottomOf="@id/startDateIcon"
+                    app:layout_constraintDimensionRatio="0.8:1"
+                    app:layout_constraintHeight_percent=".30"
+                    app:layout_constraintLeft_toRightOf="@id/dateRightGl"
+                    app:layout_constraintTop_toTopOf="@id/startDateIcon" />
+
+                <artground.otterbear.com.artground.widget.DatePickerTextView
+                    android:id="@+id/endDateBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:fontFamily="@font/namsan_medium"
+                    android:gravity="center_vertical"
+                    android:text="@string/end_date_title"
+                    android:textColor="#616161"
+                    android:textSize="@dimen/search_form_textsize"
+                    app:layout_constraintBottom_toBottomOf="@id/startDateIcon"
+                    app:layout_constraintLeft_toRightOf="@id/endDateIcon"
+                    app:layout_constraintRight_toRightOf="@id/searchFormRightGl"
+                    app:layout_constraintTop_toTopOf="@id/startDateIcon" />
+
+                <View
+                    android:id="@+id/endDateUnderLine"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/spinner_underline_height"
+                    android:background="#e0e0e0"
+                    app:layout_constraintBottom_toBottomOf="@id/endDateIcon"
+                    app:layout_constraintLeft_toLeftOf="@id/endDateIcon"
+                    app:layout_constraintRight_toRightOf="@id/endDateBtn" />
+
+                <TextView
+                    android:id="@+id/searchBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/search_btn_bg"
+                    android:enabled="false"
+                    android:fontFamily="@font/namsan_medium"
+                    android:gravity="center"
+                    android:text="@string/search"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/search_btn_textsize"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHeight_percent=".25"
+                    app:layout_constraintLeft_toLeftOf="@id/searchFormLeftGl"
+                    app:layout_constraintRight_toRightOf="@id/searchFormRightGl"
+                    app:layout_constraintTop_toBottomOf="@id/endDateUnderLine" />
+
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.constraint.Guideline
+            android:id="@+id/contentLeftGl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".03" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/contentRightGl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".97" />
+
+        <TextView
+            android:id="@+id/favoriteCategoryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dashboard_section_top_margin"
+            android:fontFamily="@font/namsan_bold"
+            android:text="@string/my_favorite_category"
+            android:textColor="#616161"
+            android:textSize="@dimen/dashboard_section_title_textsize"
+            app:layout_constraintLeft_toLeftOf="@id/contentLeftGl"
+            app:layout_constraintTop_toBottomOf="@id/searchFormSection" />
+
+        <FrameLayout
+            android:id="@+id/favoriteCategorySettingBtn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintBottom_toBottomOf="@id/favoriteCategoryTitle"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintRight_toRightOf="@id/contentRightGl"
+            app:layout_constraintTop_toBottomOf="@id/searchFormSection">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:scaleType="center"
+                android:src="@drawable/ic_settings_18dp" />
+
+        </FrameLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/favoriteCategoryList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/favoriteCategoryTitle" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>

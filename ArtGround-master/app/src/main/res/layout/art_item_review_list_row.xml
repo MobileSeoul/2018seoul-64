@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/dashboard_review_info_left_margin"
+    android:paddingTop="@dimen/dashboard_review_info_left_margin">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/lGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".03" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/rGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".97" />
+
+    <TextView
+        android:id="@+id/reviewDesc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/namsan_medium"
+        android:text="후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용"
+        android:textColor="#757575"
+        android:textSize="@dimen/dashboard_review_info_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintRight_toRightOf="@id/rGl"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/dateIcon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_access_time_18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pubDate"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintTop_toTopOf="@+id/pubDate" />
+
+    <TextView
+        android:id="@+id/pubDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dashboard_review_info_date_leftmargin"
+        android:layout_marginTop="@dimen/dashboard_review_info_date_topmargin"
+        android:fontFamily="@font/namsan_medium"
+        android:text="2018.08.01 15:39"
+        android:textColor="#bdbdbd"
+        android:textSize="@dimen/dashboard_review_info_date_textsize"
+        app:layout_constraintLeft_toRightOf="@id/dateIcon"
+        app:layout_constraintTop_toBottomOf="@id/reviewDesc" />
+
+</android.support.constraint.ConstraintLayout>

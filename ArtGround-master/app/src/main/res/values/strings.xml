@@ -1,0 +1,109 @@
+<resources>
+    <string name="app_name">Art Ground</string>
+    <string name="splash_app_name">ART GROUND</string>
+    <string name="test_dialog_msg">ArtGround 이용을 위해 아래의 권한을 허용해 주세요</string>
+    <string name="permission_usage_info_title">권한 사용안내</string>
+    <string name="filter_favorite_category">관심 카테고리</string>
+    <string name="filter_all_category">모든 카테고리</string>
+    <string name="dashboard">대시보드</string>
+    <string name="dashboard_sub_title">다양한 문화/예술 정보를 확인하세요</string>
+    <string name="dashboard_playing_artitem_title">진행중인 문화/예술 정보</string>
+    <string name="dashboard_expect_artitem_title">진행예정 문화/예술 정보</string>
+    <string name="dashboard_review_title">리뷰</string>
+    <string name="dashboard_more_view">더보기</string>
+    <string name="no_info">정보없음</string>
+    <string name="title_activity_preperation">PreperationActivity</string>
+    <string name="category">카테고리</string>
+    <string name="category_sub_title">카테고리별 문화/예술 정보 보기</string>
+    <string name="setting_favorite_category">관심 카테고리 설정</string>
+    <string name="category_with_count">%s\n(%d)</string>
+    <string name="start_date_title">시작일</string>
+    <string name="end_date_title">종료일</string>
+    <string name="start_date_error_msg_1">종료일 이전 일자를 선택하세요</string>
+    <string name="end_date_error_msg_1">시작일 이후 일자를 선택하세요</string>
+    <string name="search_title">문화/예술 정보 검색</string>
+    <string name="search_sub_title">원하는 문화/예술 정보를 검색해보세요</string>
+    <string name="search">검색</string>
+    <string name="my_favorite_category">나의 관심 카테고리</string>
+    <string name="user_art_item_title">나의 문화/예술 정보</string>
+    <string name="user_art_item_sub_title">나의 문화/예술 정보를 등록하여 홍보해보세요</string>
+    <string name="tab_to_select_info">탭하여 선택하세요</string>
+    <string name="input_art_item_time_hint">예시)\n월~목 10시, 금 11시, 주말 운영안함\n월,수,금 오후 2시 </string>
+    <string name="input_art_item_use_fee_hint">예시)\n무료\n성인: 5,000원 아동: 2,000원\n문의요망</string>
+    <string name="input_art_item_contact_hint">문의 가능한 Email 또는 전화번호 등의 정보를 입력하세요</string>
+    <string name="form_main_info_title">카테고리 및 제목 (필수)</string>
+    <string name="form_time_location_info_title">일정 및 장소 (필수)</string>
+    <string name="form_etc_info_title">기타 (선택)</string>
+    <string name="date">일정</string>
+    <string name="time">시간</string>
+    <string name="location">장소</string>
+    <string name="use_fee_title">이용요금</string>
+    <string name="webpage_title">웹페이지</string>
+    <string name="contact_title">연락처</string>
+    <string name="subject">제목</string>
+    <string name="art_item_image_title">사진 업로드 (선택)</string>
+    <string name="error_empty_art_item_name">제목을 입력해주세요</string>
+    <string name="error_no_select_category">카테고리를 선택하세요</string>
+    <string name="error_empty_art_item_time">시간을 입력해주세요</string>
+    <string name="error_empty_art_item_place">장소를 입력해주세요</string>
+    <string name="error_empty_start_date">시작일을 선택해주세요</string>
+    <string name="error_empty_end_date">종료일을 선택해주세요</string>
+    <string name="error_permission_denied_for_image_pick">권한 허용 후 이용가능합니다</string>
+    <string name="art_item_delete_msg">삭제 후 복구가 불가능 합니다. 삭제하시겠습니까?</string>
+    <string name="complete_add_art_item">등록되었습니다</string>
+    <string name="complete_modify_art_item">수정되었습니다</string>
+    <string name="edit">수정하기</string>
+    <string name="delete">삭제하기</string>
+    <string name="all_categories">모든 카테고리</string>
+    <string name="empty_user_art_item">등록한 문화/예술 정보가 없습니다</string>
+    <string name="empty_art_item">문화/예술 정보가 없습니다</string>
+    <string name="registration">등록하기</string>
+    <string name="input_review_hint">리뷰를 작성해주세요</string>
+    <string name="publish">게시</string>
+    <string name="art_item_desc">내용</string>
+    <string name="form_image_info_msg">문화/예술 정보 대표이미지를 등록해주세요</string>
+    <string name="input_desc_hint">등록하려는 문화/예술 정보의 설명을 입력해주세요</string>
+    <string name="registration_artitem_title">문화/예술 정보 등록</string>
+    <string name="modify_artitem_title">문화/예술 정보 수정</string>
+    <string name="detail_art_item_title">문화/예술 상세정보</string>
+    <string name="empty_expect_art_item">진행예정 문화/예술 정보가 없습니다 </string>
+    <string name="art_item_search_result_title">문화/예술 정보 검색결과</string>
+    <string name="select_complete">선택완료</string>
+    <string name="favorite_category_count_format">%d 개 중 %d 개 선택 됨</string>
+    <string name="noti_favorite_category_select">3 개의 관심 카테고리를 선택해야 합니다</string>
+
+    <string-array name="walkthrough_titles">
+        <item>둘러보기</item>
+        <item>찾아보기</item>
+        <item>홍보하기</item>
+    </string-array>
+
+    <string-array name="walkthrough_descs">
+        <item>서울시의 다양한 문화/예술 정보를 만나보세요</item>
+        <item>원하는 문화/예술 정보를 손쉽게 찾도록 도와드려요</item>
+        <item>공연, 전시회, 문화강좌 등을 진행할 계획이신가요?\n나의 문화/예술 정보를 등록하고 홍보해보세요</item>
+    </string-array>
+
+    <!-- dummy review -->
+    <string-array name="dummy_review">
+        <item>아쉬움이 커요</item>
+        <item>시간이 너무 빨리 지나갔네요 ㅠㅠ</item>
+        <item>강추에요</item>
+        <item>알차고 재미있었어요!</item>
+        <item>좋은 시간이었습니다</item>
+    </string-array>
+
+    <!-- Preperation-->
+    <string name="preperation_start">시작하기</string>
+    <string name="preperation_title1">Title1</string>
+    <string name="preperation_description1">Title1</string>
+    <string name="preperation_title2">Title2</string>
+    <string name="preperation_description2">Title2</string>
+    <string name="preperation_title3">Title3</string>
+    <string name="preperation_description3">Title2</string>
+
+    <!-- Favorite Category-->
+    <string name="favorite_category_title1">어떤 카테고리에 관심있으신가요?</string>
+    <string name="favorite_category_title2">탭하여 선택하세요</string>
+
+</resources>

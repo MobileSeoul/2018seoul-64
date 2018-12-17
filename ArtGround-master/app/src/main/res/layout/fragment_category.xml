@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/lGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".03" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/rGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".97" />
+
+    <TextView
+        android:id="@+id/categoryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dashboard_title_top_margin"
+        android:fontFamily="@font/namsan_medium"
+        android:text="@string/category"
+        android:textColor="#616161"
+        android:textSize="@dimen/dashboard_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/categorySubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dashboard_subtitle_top_margin"
+        android:fontFamily="@font/namsan_light"
+        android:text="@string/category_sub_title"
+        android:textColor="#616161"
+        android:textSize="@dimen/dashboard_subtitle_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintTop_toBottomOf="@id/categoryTitle" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="center"
+        android:src="@drawable/ic_settings_18dp"
+        app:layout_constraintBottom_toBottomOf="@id/categorySubTitle"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintRight_toRightOf="@id/rGl"
+        app:layout_constraintTop_toTopOf="@id/categoryTitle"
+        app:layout_constraintWidth_percent=".10" />
+
+    <View
+        android:id="@+id/titleLine"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/normal_line_size"
+        android:layout_marginTop="@dimen/dashboard_title_section_line_top_margin"
+        android:background="#e0e0e0"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintRight_toRightOf="@id/rGl"
+        app:layout_constraintTop_toBottomOf="@id/categorySubTitle" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/categoryList"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/category_list_topmargin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintRight_toRightOf="@id/rGl"
+        app:layout_constraintTop_toBottomOf="@id/titleLine" />
+
+</android.support.constraint.ConstraintLayout>

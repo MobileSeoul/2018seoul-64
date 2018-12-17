@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rowParent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/dashboard_item_card_corner_radius"
+    app:cardElevation="@dimen/dashboard_item_card_elevation"
+    app:cardUseCompatPadding="true">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/artImg"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:transitionName="sharedTransition"
+            app:layout_constraintDimensionRatio="1:0.8"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#1a000000"
+            app:layout_constraintBottom_toBottomOf="@id/artImg"
+            app:layout_constraintLeft_toLeftOf="@id/artImg"
+            app:layout_constraintRight_toRightOf="@id/artImg"
+            app:layout_constraintTop_toTopOf="@id/artImg" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/artItemContentLeftGl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".03" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/artItemContentRightGl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".97" />
+
+        <TextView
+            android:id="@+id/artItemName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/art_item_name_top_margin"
+            android:ellipsize="end"
+            android:fontFamily="@font/namsan_bold"
+            android:maxLines="3"
+            android:textColor="#616161"
+            android:textSize="@dimen/art_item_name_textsize"
+            app:layout_constraintLeft_toLeftOf="@id/artItemContentLeftGl"
+            app:layout_constraintRight_toRightOf="@id/artItemContentRightGl"
+            app:layout_constraintTop_toBottomOf="@id/artImg" />
+
+        <TextView
+            android:id="@+id/artItemDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/art_item_sub_info_top_margin"
+            android:fontFamily="@font/namsan_medium"
+            android:textColor="#616161"
+            android:textSize="@dimen/art_item_sub_info_textsize"
+            app:layout_constraintLeft_toLeftOf="@id/artItemName"
+            app:layout_constraintRight_toRightOf="@id/artItemName"
+            app:layout_constraintTop_toBottomOf="@id/artItemName" />
+
+        <TextView
+            android:id="@+id/artItemLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/art_item_sub_info_top_margin"
+            android:fontFamily="@font/namsan_medium"
+            android:paddingBottom="@dimen/art_item_name_top_margin"
+            android:textColor="#616161"
+            android:textSize="@dimen/art_item_sub_info_textsize"
+            app:layout_constraintLeft_toLeftOf="@id/artItemName"
+            app:layout_constraintRight_toRightOf="@id/artItemName"
+            app:layout_constraintTop_toBottomOf="@id/artItemDate" />
+
+        <TextView
+            android:id="@+id/artItemCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/art_item_name_top_margin"
+            android:layout_marginEnd="@dimen/art_item_name_top_margin"
+            android:background="@drawable/category_round_bg"
+            android:fontFamily="@font/namsan_medium"
+            android:paddingBottom="@dimen/dashboard_category_info_top_bottom_padding"
+            android:paddingLeft="@dimen/dashboard_category_info_left_right_padding"
+            android:paddingRight="@dimen/dashboard_category_info_left_right_padding"
+            android:paddingTop="@dimen/dashboard_category_info_top_bottom_padding"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dashboard_category_textsize"
+            app:layout_constraintBottom_toBottomOf="@id/artImg"
+            app:layout_constraintRight_toRightOf="@id/artImg" />
+
+        <ImageView
+            android:id="@+id/officialDataBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_bookmark_24dp"
+            app:layout_constraintLeft_toLeftOf="@id/artItemContentLeftGl"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/btnLine"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/normal_line_size"
+            android:background="#e0e0e0"
+            app:layout_constraintLeft_toLeftOf="@id/artItemContentLeftGl"
+            app:layout_constraintRight_toRightOf="@id/artItemContentRightGl"
+            app:layout_constraintTop_toBottomOf="@id/artItemLocation" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/editBtn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/art_item_option_btn_height"
+            android:background="?attr/selectableItemBackground"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toLeftOf="@id/artItemContentLeftGl"
+            app:layout_constraintRight_toLeftOf="@+id/deleteBtn"
+            app:layout_constraintTop_toBottomOf="@id/btnLine">
+
+            <ImageView
+                android:id="@+id/editIcon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_edit_gray_18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintHeight_percent=".80"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/editText"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/namsan_medium"
+                android:text="@string/edit"
+                android:textColor="#757575"
+                android:textSize="@dimen/detail_art_item_category_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/editIcon"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/deleteBtn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="?attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="@id/editBtn"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintLeft_toRightOf="@id/editBtn"
+            app:layout_constraintRight_toRightOf="@id/artItemContentRightGl"
+            app:layout_constraintTop_toTopOf="@id/editBtn">
+
+            <ImageView
+                android:id="@+id/deleteIcon"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="center"
+                android:src="@drawable/ic_delete_gray_18dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintHeight_percent=".80"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/deleteText"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/deleteText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/namsan_medium"
+                android:text="@string/delete"
+                android:textColor="#757575"
+                android:textSize="@dimen/detail_art_item_category_size"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/deleteIcon"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

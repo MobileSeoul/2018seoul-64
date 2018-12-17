@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/lGl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".03" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/rGl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".97" />
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/dashboardLoadingView"
+            style="@style/SpinKitView.ThreeBounce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dashboard_loadingview_top_margin"
+            app:SpinKit_Color="@color/colorPrimary"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleLine" />
+
+        <TextView
+            android:id="@+id/dashboardTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dashboard_title_top_margin"
+            android:fontFamily="@font/namsan_medium"
+            android:text="@string/dashboard"
+            android:textColor="#616161"
+            android:textSize="@dimen/dashboard_title_textsize"
+            app:layout_constraintLeft_toLeftOf="@id/lGl"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/dashboardSubTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dashboard_subtitle_top_margin"
+            android:fontFamily="@font/namsan_light"
+            android:text="@string/dashboard_sub_title"
+            android:textColor="#616161"
+            android:textSize="@dimen/dashboard_subtitle_textsize"
+            app:layout_constraintLeft_toLeftOf="@id/lGl"
+            app:layout_constraintTop_toBottomOf="@id/dashboardTitle" />
+
+        <artground.otterbear.com.artground.widget.SelectableChip
+            android:id="@+id/categoryFilterChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/dashboardSubTitle"
+            app:layout_constraintRight_toRightOf="@id/rGl"
+            app:layout_constraintTop_toTopOf="@id/dashboardTitle"
+            app:mcv_chipText="@string/filter_favorite_category"
+            app:mcv_selectable="true" />
+
+        <View
+            android:id="@+id/titleLine"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/normal_line_size"
+            android:layout_marginTop="@dimen/dashboard_title_section_line_top_margin"
+            android:background="#e0e0e0"
+            app:layout_constraintLeft_toLeftOf="@id/lGl"
+            app:layout_constraintRight_toRightOf="@id/rGl"
+            app:layout_constraintTop_toBottomOf="@id/dashboardSubTitle" />
+
+        <TextView
+            android:id="@+id/artItemTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dashboard_section_top_margin"
+            android:fontFamily="@font/namsan_bold"
+            android:text="@string/dashboard_playing_artitem_title"
+            android:textColor="#616161"
+            android:textSize="@dimen/dashboard_section_title_textsize"
+            app:layout_constraintLeft_toLeftOf="@id/lGl"
+            app:layout_constraintTop_toBottomOf="@id/titleLine" />
+
+        <TextView
+            android:id="@+id/artItemShowAllBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:fontFamily="@font/namsan_medium"
+            android:gravity="center_vertical"
+            android:paddingEnd="@dimen/dashboard_more_view_side_padding"
+            android:paddingStart="@dimen/dashboard_more_view_side_padding"
+            android:text="@string/dashboard_more_view"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/dashboard_more_view_textsize"
+            app:layout_constraintBottom_toBottomOf="@id/artItemTitle"
+            app:layout_constraintRight_toRightOf="@id/rGl"
+            app:layout_constraintTop_toTopOf="@id/artItemTitle" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/artItemViewPager"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dashboard_artitem_pager_height"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/artItemTitle" />
+
+        <TextView
+            android:id="@+id/expectArtItemTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dashboard_section_top_margin"
+            android:fontFamily="@font/namsan_bold"
+            android:text="@string/dashboard_expect_artitem_title"
+            android:textColor="#616161"
+            android:textSize="@dimen/dashboard_section_title_textsize"
+            app:layout_constraintLeft_toLeftOf="@id/lGl"
+            app:layout_constraintTop_toBottomOf="@id/artItemViewPager" />
+
+        <TextView
+            android:id="@+id/expectArtItemShowAllBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:fontFamily="@font/namsan_medium"
+            android:gravity="center_vertical"
+            android:paddingEnd="@dimen/dashboard_more_view_side_padding"
+            android:paddingStart="@dimen/dashboard_more_view_side_padding"
+            android:text="@string/dashboard_more_view"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/dashboard_more_view_textsize"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/expectArtItemTitle"
+            app:layout_constraintRight_toRightOf="@id/rGl"
+            app:layout_constraintTop_toTopOf="@id/expectArtItemTitle" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/expectArtItemViewPager"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dashboard_artitem_pager_height"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/expectArtItemTitle" />
+
+        <TextView
+            android:id="@+id/emptyExpectArtItem"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/empty_expect_art_item_section_height"
+            android:layout_marginEnd="@dimen/form_section_gap"
+            android:layout_marginTop="@dimen/form_section_gap"
+            android:layout_marginStart="@dimen/form_section_gap"
+            android:background="@drawable/dashboard_art_item_empty_bg"
+            android:fontFamily="@font/namsan_medium"
+            android:gravity="center"
+            android:text="@string/empty_expect_art_item"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/form_title_textsize"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@id/lGl"
+            app:layout_constraintRight_toRightOf="@id/rGl"
+            app:layout_constraintTop_toBottomOf="@id/expectArtItemTitle" />
+
+        <TextView
+            android:id="@+id/reviewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dashboard_section_top_margin"
+            android:fontFamily="@font/namsan_bold"
+            android:text="@string/dashboard_review_title"
+            android:textColor="#616161"
+            android:textSize="@dimen/dashboard_section_title_textsize"
+            app:layout_constraintLeft_toLeftOf="@id/lGl"
+            app:layout_constraintTop_toBottomOf="@id/expectArtItemViewPager" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/reviewList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dashboard_review_list_top_margin"
+            android:nestedScrollingEnabled="false"
+            app:layout_constraintLeft_toLeftOf="@id/lGl"
+            app:layout_constraintRight_toRightOf="@id/rGl"
+            app:layout_constraintTop_toBottomOf="@id/reviewTitle" />
+
+        <android.support.constraint.Group
+            android:id="@+id/contentGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="artItemTitle, artItemShowAllBtn, artItemViewPager, expectArtItemTitle, reviewTitle, reviewList" />
+    </android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.NestedScrollView>

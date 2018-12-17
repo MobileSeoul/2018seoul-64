@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/dashboard_item_card_corner_radius"
+    app:cardElevation="@dimen/dashboard_item_card_elevation"
+    app:cardUseCompatPadding="true">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/reviewImg"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dashboard_review_item_height"
+            android:scaleType="centerCrop"
+            android:transitionName="sharedTransition"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1.1:1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/artItemCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dashboard_review_info_left_margin"
+            android:background="@drawable/category_round_bg"
+            android:fontFamily="@font/namsan_medium"
+            android:paddingBottom="@dimen/dashboard_category_info_top_bottom_padding"
+            android:paddingLeft="@dimen/dashboard_category_info_left_right_padding"
+            android:paddingRight="@dimen/dashboard_category_info_left_right_padding"
+            android:paddingTop="@dimen/dashboard_category_info_top_bottom_padding"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dashboard_category_textsize"
+            app:layout_constraintBottom_toTopOf="@+id/artItemTitle"
+            app:layout_constraintLeft_toRightOf="@id/reviewImg"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/artItemTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dashboard_review_info_left_margin"
+            android:layout_marginStart="@dimen/dashboard_review_info_left_margin"
+            android:layout_marginTop="@dimen/dashboard_review_info_top_margin"
+            android:ellipsize="end"
+            android:fontFamily="@font/namsan_bold"
+            android:maxLines="1"
+            android:textColor="#616161"
+            android:textSize="@dimen/dashboard_review_info_title_textsize"
+            app:layout_constraintBottom_toTopOf="@+id/reviewDesc"
+            app:layout_constraintLeft_toRightOf="@id/reviewImg"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/artItemCategory" />
+
+        <TextView
+            android:id="@+id/reviewDesc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dashboard_review_info_top_margin"
+            android:ellipsize="end"
+            android:fontFamily="@font/namsan_medium"
+            android:maxLines="2"
+            android:text="후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용후기내용"
+            android:textColor="#757575"
+            android:textSize="@dimen/dashboard_review_info_desc_textsize"
+            app:layout_constraintBottom_toTopOf="@+id/pubDate"
+            app:layout_constraintLeft_toLeftOf="@id/artItemTitle"
+            app:layout_constraintRight_toRightOf="@id/artItemTitle"
+            app:layout_constraintTop_toBottomOf="@id/artItemTitle" />
+
+        <ImageView
+            android:id="@+id/dateIcon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_access_time_18dp"
+            app:layout_constraintBottom_toBottomOf="@+id/pubDate"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toLeftOf="@id/artItemTitle"
+            app:layout_constraintTop_toTopOf="@+id/pubDate" />
+
+        <TextView
+            android:id="@+id/pubDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dashboard_review_info_date_leftmargin"
+            android:layout_marginTop="@dimen/dashboard_review_info_date_topmargin"
+            android:fontFamily="@font/namsan_medium"
+            android:textColor="#bdbdbd"
+            android:textSize="@dimen/dashboard_review_info_date_textsize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/dateIcon"
+            app:layout_constraintTop_toBottomOf="@id/reviewDesc" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

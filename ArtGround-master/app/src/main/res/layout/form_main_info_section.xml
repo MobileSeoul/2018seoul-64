@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#f5f5f5"
+    android:paddingBottom="@dimen/form_title_margin"
+    android:paddingTop="@dimen/form_title_margin">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/lGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".03" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/rGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".97" />
+
+    <TextView
+        android:id="@+id/sectionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/namsan_medium"
+        android:text="@string/form_main_info_title"
+        android:textColor="#212121"
+        android:textSize="@dimen/form_section_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/formCategoryTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/form_title_margin"
+        android:fontFamily="@font/namsan_light"
+        android:text="@string/category"
+        android:textColor="#424242"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintTop_toBottomOf="@id/sectionTitle" />
+
+    <android.support.v7.widget.AppCompatSpinner
+        android:id="@+id/categorySpinner"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/form_info_default_height"
+        android:layout_marginTop="@dimen/form_info_margin"
+        android:background="@drawable/form_bg"
+        android:clickable="false"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintRight_toRightOf="@id/rGl"
+        app:layout_constraintTop_toBottomOf="@id/formCategoryTitle" />
+
+    <ImageView
+        android:id="@+id/spinnerArrowIcon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        android:src="@drawable/ic_keyboard_arrow_down_light_black_18dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/categorySpinner"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintRight_toRightOf="@id/categorySpinner"
+        app:layout_constraintTop_toTopOf="@id/categorySpinner" />
+
+    <TextView
+        android:id="@+id/formArtItemNameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/form_title_margin"
+        android:fontFamily="@font/namsan_light"
+        android:text="@string/subject"
+        android:textColor="#424242"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintTop_toBottomOf="@id/categorySpinner" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/inputArtItemName"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/form_info_default_height"
+        android:layout_marginTop="@dimen/form_info_margin"
+        android:background="@drawable/form_bg"
+        android:fontFamily="@font/namsan_light"
+        android:gravity="center_vertical"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLength="30"
+        android:maxLines="1"
+        android:paddingLeft="@dimen/form_info_left_right_padding"
+        android:paddingRight="@dimen/form_info_left_right_padding"
+        android:textColor="#616161"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintRight_toRightOf="@id/rGl"
+        app:layout_constraintTop_toBottomOf="@id/formArtItemNameTitle" />
+
+</android.support.constraint.ConstraintLayout>

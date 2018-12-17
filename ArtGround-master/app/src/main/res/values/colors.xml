@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#941e34</color>
+    <color name="colorPrimaryDark">#60000e</color>
+    <color name="splashColor">#9E2439</color>
+
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="seoul_main_color1">#941e34</color>
+    <color name="seoul_main_color2">#dfdfdd</color>
+    <color name="dialog_supporting_text_color">#424242</color>
+    <color name="image_mask_color">#80000000</color> <!-- alpha 50% -->
+    <color name="select_mask_color">#80037101</color> <!-- alpha 50% -->
+    <!-- Preperation color-->
+    <color name="preperation_next_btn_color">#ffffff</color>
+
+    <color name="preperation_next_title_font_color">#ffffff</color>
+
+    <!-- Favorite Category color-->
+    <color name="fc_grayline_color">#6A6F73</color>
+</resources>

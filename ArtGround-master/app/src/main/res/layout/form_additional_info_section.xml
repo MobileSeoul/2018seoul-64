@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:paddingBottom="@dimen/form_title_margin"
+    android:paddingTop="@dimen/form_title_margin">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/lGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".03" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/rGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".97" />
+
+    <TextView
+        android:id="@+id/sectionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/namsan_medium"
+        android:text="@string/form_etc_info_title"
+        android:textColor="#212121"
+        android:textSize="@dimen/form_section_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/formDescTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/form_title_margin"
+        android:fontFamily="@font/namsan_light"
+        android:text="@string/art_item_desc"
+        android:textColor="#424242"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintTop_toBottomOf="@id/sectionTitle" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/inputDesc"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/form_desc_height"
+        android:layout_marginTop="@dimen/form_info_margin"
+        android:background="@drawable/form_bg"
+        android:fontFamily="@font/namsan_light"
+        android:gravity="center_vertical"
+        android:hint="@string/input_desc_hint"
+        android:paddingBottom="@dimen/form_info_top_bottom_padding"
+        android:paddingLeft="@dimen/form_info_left_right_padding"
+        android:paddingRight="@dimen/form_info_left_right_padding"
+        android:paddingTop="@dimen/form_info_top_bottom_padding"
+        android:textColor="#616161"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintRight_toRightOf="@id/rGl"
+        app:layout_constraintTop_toBottomOf="@id/formDescTitle" />
+
+    <TextView
+        android:id="@+id/formUseFeeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/form_title_margin"
+        android:fontFamily="@font/namsan_light"
+        android:text="@string/use_fee_title"
+        android:textColor="#424242"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintTop_toBottomOf="@id/inputDesc" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/inputUseFee"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/form_info_margin"
+        android:background="@drawable/form_bg"
+        android:fontFamily="@font/namsan_light"
+        android:gravity="center_vertical"
+        android:hint="@string/input_art_item_use_fee_hint"
+        android:paddingBottom="@dimen/form_info_top_bottom_padding"
+        android:paddingLeft="@dimen/form_info_left_right_padding"
+        android:paddingRight="@dimen/form_info_left_right_padding"
+        android:paddingTop="@dimen/form_info_top_bottom_padding"
+        android:textColor="#616161"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintRight_toRightOf="@id/rGl"
+        app:layout_constraintTop_toBottomOf="@id/formUseFeeTitle" />
+
+    <TextView
+        android:id="@+id/formWebPageTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/form_title_margin"
+        android:fontFamily="@font/namsan_light"
+        android:text="@string/webpage_title"
+        android:textColor="#424242"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintTop_toBottomOf="@id/inputUseFee" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/inputWebPage"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/form_info_default_height"
+        android:layout_marginTop="@dimen/form_info_margin"
+        android:background="@drawable/form_bg"
+        android:fontFamily="@font/namsan_light"
+        android:gravity="center_vertical"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingBottom="@dimen/form_info_top_bottom_padding"
+        android:paddingLeft="@dimen/form_info_left_right_padding"
+        android:paddingRight="@dimen/form_info_left_right_padding"
+        android:paddingTop="@dimen/form_info_top_bottom_padding"
+        android:textColor="#616161"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintRight_toRightOf="@id/rGl"
+        app:layout_constraintTop_toBottomOf="@id/formWebPageTitle" />
+
+    <TextView
+        android:id="@+id/formContactTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/form_title_margin"
+        android:fontFamily="@font/namsan_light"
+        android:text="@string/contact_title"
+        android:textColor="#424242"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintTop_toBottomOf="@id/inputWebPage" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/inputContact"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/form_info_default_height"
+        android:layout_marginTop="@dimen/form_info_margin"
+        android:background="@drawable/form_bg"
+        android:fontFamily="@font/namsan_light"
+        android:gravity="center_vertical"
+        android:hint="@string/input_art_item_contact_hint"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingBottom="@dimen/form_info_top_bottom_padding"
+        android:paddingLeft="@dimen/form_info_left_right_padding"
+        android:paddingRight="@dimen/form_info_left_right_padding"
+        android:paddingTop="@dimen/form_info_top_bottom_padding"
+        android:textColor="#616161"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintRight_toRightOf="@id/rGl"
+        app:layout_constraintTop_toBottomOf="@id/formContactTitle" />
+
+
+</android.support.constraint.ConstraintLayout>

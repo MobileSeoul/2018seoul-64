@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:paddingBottom="@dimen/form_title_margin"
+    android:paddingTop="@dimen/form_title_margin">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/lGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".03" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/rGl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".97" />
+
+    <TextView
+        android:id="@+id/sectionTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/namsan_medium"
+        android:text="@string/form_time_location_info_title"
+        android:textColor="#212121"
+        android:textSize="@dimen/form_section_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/startDateRightGL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".48" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/endDateLeftGL"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".52" />
+
+    <TextView
+        android:id="@+id/formStartDateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/form_title_margin"
+        android:fontFamily="@font/namsan_light"
+        android:text="@string/start_date_title"
+        android:textColor="#424242"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintTop_toBottomOf="@id/sectionTitle" />
+
+    <artground.otterbear.com.artground.widget.DatePickerTextView
+        android:id="@+id/formStartDatePicker"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/form_info_default_height"
+        android:layout_marginTop="@dimen/form_info_margin"
+        android:background="@drawable/form_bg"
+        android:fontFamily="@font/namsan_medium"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/form_info_left_right_padding"
+        android:paddingRight="@dimen/form_info_left_right_padding"
+        android:text="@string/tab_to_select_info"
+        android:textColor="#616161"
+        android:textSize="@dimen/search_form_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintRight_toRightOf="@id/startDateRightGL"
+        app:layout_constraintTop_toBottomOf="@id/formStartDateTitle" />
+
+    <TextView
+        android:id="@+id/formEndDateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/namsan_light"
+        android:text="@string/end_date_title"
+        android:textColor="#424242"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/endDateLeftGL"
+        app:layout_constraintTop_toTopOf="@id/formStartDateTitle" />
+
+    <artground.otterbear.com.artground.widget.DatePickerTextView
+        android:id="@+id/formEndDatePicker"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/form_info_default_height"
+        android:layout_marginTop="@dimen/form_info_margin"
+        android:background="@drawable/form_bg"
+        android:fontFamily="@font/namsan_medium"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/form_info_left_right_padding"
+        android:paddingRight="@dimen/form_info_left_right_padding"
+        android:text="@string/tab_to_select_info"
+        android:textColor="#616161"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/endDateLeftGL"
+        app:layout_constraintRight_toRightOf="@id/rGl"
+        app:layout_constraintTop_toBottomOf="@id/formEndDateTitle" />
+
+    <TextView
+        android:id="@+id/formTimeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/form_title_margin"
+        android:fontFamily="@font/namsan_light"
+        android:text="@string/time"
+        android:textColor="#424242"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintTop_toBottomOf="@id/formStartDatePicker" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/inputTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/form_info_margin"
+        android:background="@drawable/form_bg"
+        android:fontFamily="@font/namsan_light"
+        android:gravity="center_vertical"
+        android:hint="@string/input_art_item_time_hint"
+        android:paddingBottom="@dimen/form_info_top_bottom_padding"
+        android:paddingLeft="@dimen/form_info_left_right_padding"
+        android:paddingRight="@dimen/form_info_left_right_padding"
+        android:paddingTop="@dimen/form_info_top_bottom_padding"
+        android:textColor="#616161"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintRight_toRightOf="@id/rGl"
+        app:layout_constraintTop_toBottomOf="@id/formTimeTitle" />
+
+    <TextView
+        android:id="@+id/formLocationTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/form_title_margin"
+        android:fontFamily="@font/namsan_light"
+        android:text="@string/location"
+        android:textColor="#424242"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintTop_toBottomOf="@id/inputTime" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/inputLocation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/form_info_margin"
+        android:background="@drawable/form_bg"
+        android:fontFamily="@font/namsan_light"
+        android:gravity="center_vertical"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:maxLines="1"
+        android:minHeight="@dimen/form_info_default_height"
+        android:paddingBottom="@dimen/form_info_top_bottom_padding"
+        android:paddingLeft="@dimen/form_info_left_right_padding"
+        android:paddingRight="@dimen/form_info_left_right_padding"
+        android:paddingTop="@dimen/form_info_top_bottom_padding"
+        android:textColor="#616161"
+        android:textSize="@dimen/form_title_textsize"
+        app:layout_constraintLeft_toLeftOf="@id/lGl"
+        app:layout_constraintRight_toRightOf="@id/rGl"
+        app:layout_constraintTop_toBottomOf="@id/formLocationTitle" />
+
+</android.support.constraint.ConstraintLayout>

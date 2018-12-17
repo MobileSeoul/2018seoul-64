@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="blocksDescendants">
+
+            <android.support.constraint.Guideline
+                android:id="@+id/lGl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".03" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/rGl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".97" />
+
+            <TextView
+                android:id="@+id/userArtItemTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dashboard_title_top_margin"
+                android:fontFamily="@font/namsan_medium"
+                android:text="@string/user_art_item_title"
+                android:textColor="#616161"
+                android:textSize="@dimen/dashboard_title_textsize"
+                app:layout_constraintLeft_toLeftOf="@id/lGl"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/userArtItemSubTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dashboard_subtitle_top_margin"
+                android:fontFamily="@font/namsan_light"
+                android:text="@string/user_art_item_sub_title"
+                android:textColor="#616161"
+                android:textSize="@dimen/dashboard_subtitle_textsize"
+                app:layout_constraintLeft_toLeftOf="@id/lGl"
+                app:layout_constraintTop_toBottomOf="@id/userArtItemTitle" />
+
+            <View
+                android:id="@+id/titleLine"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/normal_line_size"
+                android:layout_marginTop="@dimen/dashboard_title_section_line_top_margin"
+                android:background="#e0e0e0"
+                app:layout_constraintLeft_toLeftOf="@id/lGl"
+                app:layout_constraintRight_toRightOf="@id/rGl"
+                app:layout_constraintTop_toBottomOf="@id/userArtItemSubTitle" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/userArtItemList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:paddingBottom="@dimen/user_art_item_list_bottom_padding"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleLine" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <ImageView
+        android:id="@+id/userArtItemEmptyIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_live_help_56dp"
+        app:layout_constraintBottom_toTopOf="@+id/userArtItemEmptyText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/userArtItemEmptyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/art_item_sub_info_top_margin"
+        android:fontFamily="@font/namsan_medium"
+        android:text="@string/empty_user_art_item"
+        android:textColor="#616161"
+        android:textSize="@dimen/detail_art_item_category_size"
+        app:layout_constraintBottom_toTopOf="@+id/emptyArtItemWriteBtn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userArtItemEmptyIcon" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/emptyArtItemWriteBtn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/detail_art_item_info_left_margin"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardCornerRadius="@dimen/dashboard_item_card_corner_radius"
+        app:cardElevation="@dimen/dashboard_item_card_elevation"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent=".10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userArtItemEmptyText"
+        app:layout_constraintWidth_percent=".60">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#941e34"
+            android:fontFamily="@font/namsan_light"
+            android:gravity="center"
+            android:text="@string/registration"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/detail_art_item_category_size" />
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.constraint.Group
+        android:id="@+id/emptySectionGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="userArtItemEmptyIcon, userArtItemEmptyText, emptyArtItemWriteBtn" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/artItemWriteBtn"
+        android:layout_width="@dimen/add_art_item_fab_size"
+        android:layout_height="@dimen/add_art_item_fab_size"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:src="@drawable/ic_add_white_18dp"
+        app:backgroundTint="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
